@@ -2,7 +2,9 @@ package com.example.gestion_plats.entities;
 // import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import java.util.*;
-import java.util.Locale.Category;
+//import java.util.Locale.Category;
+
+import com.example.gestion_plats.enums.Categorie;
 @Entity
 
 public class Plat {
@@ -13,7 +15,7 @@ public class Plat {
     private Float prix ;
     private Float calories;
     @Enumerated (EnumType.STRING)
-    private Category category;
+    private Categorie category;
     @ManyToOne
     private Client client;
     @ManyToMany
@@ -50,11 +52,13 @@ public class Plat {
         this.calories = calories;
     }
 
-    public Category getCategory() {
+   
+
+    public Categorie getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Categorie category) {
         this.category = category;
     }
 
